@@ -1,0 +1,224 @@
+/* Cores principais */
+:root {
+    --bege-claro: #E0D4BE;
+    --off-white: #F2F3ED;
+    --verde-claro: #BCC399;
+    --verde-medio: #778E69;
+    --preto: #151513;
+    --whatsapp: #25D366;
+    --instagram: #C13584;
+    --ifood: #E23744;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--off-white);
+    color: var(--preto);
+}
+
+/* Menu */
+header {
+    background-color: var(--bege-claro);
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* permite quebrar em telas pequenas */
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .logo img.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+nav .logo span {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+nav ul.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul.menu li a {
+    text-decoration: none;
+    color: var(--preto);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul.menu li a:hover {
+    color: var(--verde-medio);
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--preto);
+    text-shadow: 1px 1px 4px rgba(255,255,255,0.7);
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+    color: #fff;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn-ifood {
+    background-color: var(--ifood);
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp);
+}
+
+.btn-instagram {
+    background-color: var(--instagram);
+}
+
+/* Seções */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Catálogo */
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.produto {
+    background-color: var(--off-white);
+    border: 1px solid var(--bege-claro);
+    padding: 15px;
+    width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.produto:hover {
+    transform: scale(1.05);
+}
+
+.produto img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--preto);
+    color: var(--off-white);
+    text-align: center;
+    padding: 20px;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    nav ul.menu {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul.menu {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .produtos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        padding: 80px 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 10px;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    nav .logo span {
+        font-size: 1.5rem;
+    }
+
+    .produto {
+        width: 90%;
+    }
+}
